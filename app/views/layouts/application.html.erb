@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinderOnRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if alert %>
+  <%= alert %>
+<% end %>
+<% if notice %>
+  <%= notice %>
+<% end %>
+
+<% if user_signed_in? %>
+  Currently signed in as: <%= current_user.email %>
+  <%= link_to 'Sign out', sign_out_path %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
